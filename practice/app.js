@@ -18,13 +18,23 @@ function renderCourses(courses) {
   var listCoursesBlock = document.querySelector("#list-block");
   var htmls = courses.map((course) => {
     return `
-        <li class="course-item-${course.id}">
-            <h4>${course.name}</h4>
+        <li 
+        style="list-style-type: none; width: 280px; margin-top:8px"
+        class="course-item-${course.id}">
+            <h4>${course.id}. ${course.name}</h4>
             <p>${course.description}</p>
-            <button onclick="handleDeleteCourses(${course.id})">Xoá</button>      
-            <button id="update" 
-            onclick="handleUpdateCourses(${course.id})"
-            >Sửa</button>  
+            <div
+            style='display: flex; column-gap: 12px; width:100%'
+            >
+              <button
+              style="width: 50%; background-color:#dc4c64; border:none; color:#fff; border-radius:4px; box-shadow: 0 4px 9px -4px #dc4c64; padding: 6px 0"
+              onclick="handleDeleteCourses(${course.id})">Xoá</button>      
+              <button
+              style="width: 50%; background-color:#14a44d; border:none; color:#fff; border-radius:4px; box-shadow: 0 4px 9px -4px #14a44d; padding: 6px 0"
+              id="update" 
+              onclick="handleUpdateCourses(${course.id})"
+              >Sửa</button>
+            </div>  
         </li>
         `;
   });
@@ -35,6 +45,10 @@ function renderCourses(courses) {
 function handlecreateCourse() {
   var name = document.querySelector('input[name="name"]').value;
   var description = document.querySelector('input[name="description"]').value;
+
+  if (name === "") {
+    return;
+  }
 
   var formData = {
     name: name,

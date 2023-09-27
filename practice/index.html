@@ -4,29 +4,79 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <h2>
-      Danh sách khoá học của F8
+    <div class="container todo-container">
+      <h1 class="text-center">Todo List</h1>
+
+      <form id="task-form">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            margin-top: 12px;
+            justify-content: center;
+          "
+          class="input-group mb-3"
+        >
+          <div style="display: flex; align-items: center">
+            <label
+              style="
+                margin-top: 12px;
+                display: flex;
+                align-items: center;
+                column-gap: 50px;
+                justify-content: center;
+              "
+              >Name
+              <input id="1" type="text" name="name" />
+            </label>
+          </div>
+          <div
+            style="display: flex; align-items: center; flex-direction: column"
+          >
+            <label
+              style="
+                margin-top: 12px;
+                display: flex;
+                align-items: center;
+                column-gap: 10px;
+              "
+              >Description
+              <input id="2" type="text" name="description" />
+            </label>
+            <div class="input-group-append">
+              <button
+                style="
+                  display: flex;
+                  align-items: center;
+                  width: 280px;
+                  justify-content: center;
+                "
+                class="btn btn-primary"
+                type="submit"
+                id="create"
+                onclick="handlecreateCourse()"
+              >
+                Create
+              </button>
+              <!-- <button id="create" onclick="handlecreateCourse()">Create</button> -->
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- <ul class="task-list" id="task-list"></ul> -->
 
       <ul id="list-block"></ul>
-    </h2>
-
-    <div>
-      <label
-        >Name
-        <input id="1" type="text" name="name" />
-      </label>
-    </div>
-    <div>
-      <label
-        >Description
-        <input id="2" type="text" name="description" />
-      </label>
     </div>
 
-    <button id="create" onclick="handlecreateCourse()">Create</button>
     <script src="./app.js"></script>
   </body>
 </html>
