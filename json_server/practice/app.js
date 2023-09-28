@@ -1,5 +1,4 @@
 var courseApi = "http://localhost:3000/courses";
-
 var start = () => {
   getCourses(renderCourses);
 };
